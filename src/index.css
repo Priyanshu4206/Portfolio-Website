@@ -1,13 +1,50 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* For Headings */
+@import url('https://fonts.googleapis.com/css2?family=Moirai+One&display=swap');
+
+@font-face {
+  font-family: 'Blooop';
+  src: local('Blooop'), url(./Assets//Fonts/blooop.ttf) format('truetype');
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+  --progress: 0;
+  --silver: #C8C8CAff;
+  --rich-black-3: #111119ff;
+  --spring-green: #01ff94ff;
+  --dark-emrald: #1b842c;
+  --rich-black: #111119ff;
+  --seasalt: #f7f7f7ff;
+  --davys-gray: #5a5a5cff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  transition: all 0.2s ease-in-out;
+  user-select: none;
+}
+
+.App {
+  min-height: 100vh;
+  width: 100%;
+}
+
+.dark {
+  background-color: var(--rich-black);
+  color: var(--seasalt);
+}
+
+a {
+  text-decoration: none;
+  color: var(--seasalt);
+}
+
+.green-txt {
+  color: var(--spring-green);
 }
