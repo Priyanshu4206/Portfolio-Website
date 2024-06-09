@@ -294,15 +294,15 @@ h3 {
 
 .project_demo_area {
     position: relative;
-    height: 400px;
+    min-height: 400px;
     border-radius: 100%;
     --s: 400px;
     --b: 4px;
     --g: 14px;
-    width: var(--s);
+    max-width: var(--s);
     aspect-ratio: 1;
-    outline: calc(var(--s)/2) solid #0009;
-    outline-offset: calc(var(--s)/-2);
+    outline: calc(var(--s)/3) solid #0009;
+    outline-offset: calc(var(--s)/-3);
     cursor: pointer;
     box-shadow: 0 0 35px var(--dark-emrald), -10px 0 80px #000, 0px 0 8px var(--silver);
 }
@@ -505,6 +505,7 @@ h3 {
     margin: 2rem;
     flex: 1;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
     gap: 3vw;
 }
@@ -520,6 +521,16 @@ h3 {
     align-items: center;
     padding: 1.5rem;
     aspect-ratio: 1;
+}
+
+#techStack {
+    margin-bottom: 25vh;
+}
+
+.techStack {
+
+    width: 180px;
+    text-align: center;
 }
 
 .bubble:hover {
@@ -683,5 +694,15 @@ h3 {
 
     .bubble_container {
         flex-direction: column;
+    }
+
+    .techStack-container {
+        gap: 1rem;
+        flex-direction: row;
+    }
+
+    .techStack {
+        font-size: 0.8rem;
+        width: 100px;
     }
 }

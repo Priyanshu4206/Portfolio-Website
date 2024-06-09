@@ -3,27 +3,55 @@ import "./Homepage.css";
 import { motion } from "framer-motion";
 import { FaAngleLeft } from "react-icons/fa6";
 import { FaAngleRight } from "react-icons/fa6";
-import eg_link from "../Assets/Demo_project_img.png";
+import p1_link from "../Assets/BlogSpot.png";
+import p2_link from "../Assets/Ptal-Clone.png";
+import p3_link from "../Assets/p3_link.png";
+import p4_link from "../Assets/p4_link.png";
+import Resume from "../Assets/Latest_Resume.pdf";
 const Homepage = () => {
   const Project_list = [
     {
-      title: "Project Title 1",
-      img_link: eg_link,
-      desc: `Project Descriptions Lorem ipsum dolor sit amet consectetur adipisicing elit. Error nemo reprehenderit cumque aperiam, corporis voluptatem veritatis tempore minus dignissimos, illum aliquid blanditiis doloribus distinctio fuga inventore ut dolorum, optio accusantium? `,
+      title: "OpenEcho Blog Website",
+      img_link: p1_link,
+      desc: `I built a responsive web blog app using React and Vite, featuring user authentication, CRUD operations, and a TinyMCE editor for rich text formatting. The app, designed with Tailwind CSS and optimized with Redux Toolkit and React Hook Forms, allows users to add featured images to posts. Backend services are managed by Appwrite. Deployed on VercelI built a responsive web blog app using React and Vite, featuring user authentication, CRUD operations, and a TinyMCE editor for rich text formatting. The app, designed with Tailwind CSS and optimized with Redux Toolkit and React Hook Forms, allows users to add featured images to posts. Backend services are managed by Appwrite. Deployed on Vercel`,
       pos: "Frontend Developer",
     },
     {
-      title: "Project Title 2",
-      img_link: eg_link,
-      desc: `Project Descriptions Lorem ipsum dolor sit amet consectetur adipisicing elit. Error nemo reprehenderit cumque aperiam, corporis voluptatem veritatis tempore minus dignissimos, illum aliquid blanditiis doloribus distinctio fuga inventore ut dolorum, optio accusantium? `,
+      title: "Ecommerce Website P-Tal Clone",
+      img_link: p2_link,
+      desc: `It was my very first try to clone a website. This was a E-commerce website. I tried my best to copy most of the functionalities I could in a small span of time. While working with this project allowed me to sharpen up my skills on Front-End Development too. Link to the original Website :- https://ptal.inIt was my very first try to clone a website. This was a E-commerce website. I tried my best to copy most of the functionalities I could in a small span of time. While working with this project allowed me to sharpen up my skills on Front-End Development too. Link to the original Website :- https://ptal.in`,
       pos: "Frontend Developer",
     },
     {
-      title: "Project Title 3",
-      img_link: eg_link,
-      desc: `Project Descriptions Lorem ipsum dolor sit amet consectetur adipisicing elit. Error nemo reprehenderit cumque aperiam, corporis voluptatem veritatis tempore minus dignissimos, illum aliquid blanditiis doloribus distinctio fuga inventore ut dolorum, optio accusantium? `,
-      pos: "Frontend Developer",
+      title: "Calculator Application",
+      img_link: p3_link,
+      desc: "I developed a Calculator Application with three switchable modes. It functions effectively as a basic calculator and significantly enhanced my skills in React.js. Through this project, I gained a deeper understanding of basic hooks like useState and useEffect, improved my JavaScript proficiency, and learned to use CSS variables to my advantage for better styling and theme management.",
+      pos: "Frontend Learner",
     },
+    {
+      title: "Cricket Console Game",
+      img_link: p4_link,
+      desc: `Successfully completed a coding challenge by creating a console game, earning 1st prize for the implementation. Developed a Cricket Game on console using CPP, leveraging the provided basic layout from the manual and independently determining the entire game logic`,
+      pos: "",
+    },
+  ];
+  const techStack = [
+    "HTML",
+    "CSS",
+    "Tailwind CSS",
+    "Javascript",
+    "Node.js",
+    "C",
+    "CPP",
+    "Java",
+    "python",
+    "React.js",
+    "Appwrite",
+    "Firebase",
+    "MERN",
+    "MongoDb",
+    "MYSQL",
+    "Next.jS",
   ];
   const [currProject, setCurrProject] = useState(1);
   function nextProject() {
@@ -49,7 +77,7 @@ const Homepage = () => {
       "--progress",
       `${100 / Project_list.length}%`
     );
-  }, []);
+  }, [Project_list.length]);
   return (
     <div className="homepage">
       <header className="primary-header">
@@ -98,7 +126,7 @@ const Homepage = () => {
           <div className="download_btn">
             <div className="circle-1 circles"></div>
             <div className="circle-2 circles"></div>
-            <a href="/" className="download_link green-txt">
+            <a href={Resume} className="download_link green-txt">
               {"<Download CV/>"}
             </a>
           </div>
@@ -159,6 +187,15 @@ const Homepage = () => {
             <span className="al-left">{"</h2>"}</span>
             <h2>Tech Stack</h2>
             <span className="al-right">{"</h2>"}</span>
+          </div>
+          <div className="bubble_container techStack-container">
+            {techStack.map((skill) => (
+              <a href="/" className="bubble techStack" id={skill}>
+                <span>{"<>"}</span>
+                <p>{skill}</p>
+                <span>{"</>"}</span>
+              </a>
+            ))}
           </div>
         </section>
         <section id="contact">
